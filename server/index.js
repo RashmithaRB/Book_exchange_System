@@ -2,7 +2,7 @@ const express=require("express")
 const mongoose=require('mongoose')
 const cors=require("cors")
 const EmployeeModel=require('./models/Employee')
-const Book=require('./models/Book')
+const BookModel=require('./models/Book')
 
 
 const app=express()
@@ -35,7 +35,7 @@ app.post('/register',(req,res)=>{
 })
 
 // Retrieve All Books
-app.get("/books", (req, res) => {
+app.get("/home", (req, res) => {
     BookModel.find()
     .then(books => res.json(books))
     .catch(err => res.json(err));

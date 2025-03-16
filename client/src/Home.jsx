@@ -13,20 +13,13 @@ function Home() {
         .catch(error => console.log(error));
     }, []);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post("http://localhost:3001/addBook", {
-                title,
-                author,
-                year: parseInt(year)
-            });
-            alert(response.data.message);
-            setBooks([...books, response.data.book]); // Update the book list without reloading
-        } catch (error) {
-            console.error("Error adding book:", error);
-        }
-    };
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        axios.post('http://localhost:3001/addBook',{title,author,year})
+        .then(result=>console.log(result))
+        .catch(err=>console.log(err))
+
+    }
     
 
     return (
