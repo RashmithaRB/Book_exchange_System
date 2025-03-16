@@ -10,7 +10,7 @@ function Signup(){
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3001/login',{name,email,password})
+        axios.post('http://localhost:3001/register',{name,email,password})
         .then(result=>{console.log(result)
             navigate('/home')
         })
@@ -22,6 +22,19 @@ function Signup(){
             <div className="bg-white p-3 rounded w-25">
                 <h2>Register</h2>
                 <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                        <label htmlFor="email">
+                            <strong>Name</strong>
+                        </label>
+                        <input
+                        type="text"
+                        placeholder="Enter Name"
+                        autoComplete="off"
+                        name="email"
+                        className="form-control rounded-0"
+                        onChange={(e)=>setName(e.target.value)}
+                        />
+                    </div>
                     <div className="mb-3">
                         <label htmlFor="email">
                             <strong>Email</strong>
@@ -32,7 +45,8 @@ function Signup(){
                         autoComplete="off"
                         name="email"
                         className="form-control rounded-0"
-                        onChange={(e)=>setEmail(e.target.value)}/>
+                        onChange={(e)=>setEmail(e.target.value)}
+                        />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email">
