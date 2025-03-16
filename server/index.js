@@ -9,7 +9,7 @@ const app=express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb+srv://rbangerakhushi:SZIyHew32yI3fvGH@cluster0.hyr7o.mongodb.net/employee");
+mongoose.connect("paste your connection string(either from mongodb atlas or mongodb compass");
 
 
 app.post("/login",(req,res)=>{
