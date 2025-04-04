@@ -7,9 +7,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const mongoURI = "mongodb+srv://rbangerakhushi:SZIyHew32yI3fvGH@cluster0.hyr7o.mongodb.net/";
-const dbName = "employee"; // Your database name
-const collectionName = "books"; // Your collection name
+const mongoURI = "mongodb+srv://<username>:<Password>H@cluster0.hyr7o.mongodb.net/";
+const dbName = "employee";
+const collectionName = "books"; 
 mongoose.connect("paste your connection string(either from mongodb atlas or mongodb compass");
 
 // Function to connect to MongoDB
